@@ -1,6 +1,6 @@
 # DSA Log
 
-A minimal, single-file dark-themed tracker for daily DSA (Data Structures & Algorithms) practice. No backend, no login — everything runs in the browser and saves to `localStorage`.
+A minimal, single-file dark-themed tracker for daily DSA (Data Structures & Algorithms) practice. No backend, no login as everything runs in the browser and saves to `localStorage`.
 
 ## Features
 
@@ -14,14 +14,6 @@ A minimal, single-file dark-themed tracker for daily DSA (Data Structures & Algo
   - **Time taken** — much slower than expected pulls it closer; much faster pushes it out.
   - The queue panel shows what's overdue, due today, and coming up.
 - **Export / Import JSON** — since data only lives in one browser's `localStorage`, use Export to back it up periodically or move it to another machine, and Import to bring it back in.
-
-## Hosting it on GitHub Pages
-
-1. Create a new GitHub repo (e.g. `dsa-log`).
-2. Add `index.html` to the root of the repo (this file is a complete, dependency-free app — no build step needed).
-3. Push to GitHub.
-4. In the repo: **Settings → Pages → Source**, choose the `main` branch and `/ (root)` folder, then save.
-5. GitHub will give you a URL like `https://<your-username>.github.io/dsa-log/` — that's your tracker.
 
 ## A note on data persistence
 
