@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DSA Log</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="shell">
+
+  <header class="top">
+    <h1>DSA Log <span class="dim">personal problem-solving tracker</span></h1>
+    <div class="top-actions">
+      <button class="btn ghost small" id="exportBtn">Export JSON</button>
+      <label class="btn ghost small" for="importFile">Import JSON</label>
+      <input type="file" id="importFile" accept="application/json">
+      <button class="btn ghost small danger" id="clearBtn">Clear all</button>
+    </div>
+  </header>
+
+  <section class="dash">
+    <div class="stat streak">
+      <div class="label">Current streak</div>
+      <div class="value" id="statStreak">0 <small>days</small></div>
+    </div>
+    <div class="stat">
+      <div class="label">Longest streak</div>
+      <div class="value" id="statLongest">0 <small>days</small></div>
+    </div>
+    <div class="stat">
+      <div class="label">Total solved</div>
+      <div class="value" id="statTotal">0</div>
+    </div>
+    <div class="stat">
+      <div class="label">Easy / Med / Hard</div>
+      <div class="value" id="statSplit" style="font-size:15px;">0 / 0 / 0</div>
+    </div>
+    <div class="stat">
+      <div class="label">Due for revisit</div>
+      <div class="value" id="statDue">0</div>
+    </div>
+    <div class="stat">
+      <div class="label">Needed help</div>
+      <div class="value" id="statHelp">0%</div>
+    </div>
+  </section>
+
+  <section class="panels-row">
+    <div class="panel">
+      <h2>Activity, last 18 weeks</h2>
+      <div class="heatmap" id="heatmap"></div>
+      <div class="heat-legend">
+        <span>Less</span>
+        <span class="heat-cell" data-level="0" style="width:9px;height:9px;"></span>
+        <span class="heat-cell" data-level="1" style="width:9px;height:9px;"></span>
+        <span class="heat-cell" data-level="2" style="width:9px;height:9px;"></span>
+        <span class="heat-cell" data-level="3" style="width:9px;height:9px;"></span>
+        <span class="heat-cell" data-level="4" style="width:9px;height:9px;"></span>
+        <span>More</span>
+      </div>
+    </div>
+    <div class="panel">
+      <h2>Revisit queue &mdash; spaced by difficulty, time taken &amp; help needed</h2>
+      <div class="revisit-list" id="revisitList"></div>
+    </div>
+  </section>
+
+  <div class="table-toolbar">
+    <span class="count" id="rowCount">0 problems logged</span>
+    <span class="count">saved automatically to this browser</span>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th style="width:26px;"></th>
+          <th>Date</th>
+          <th>Title</th>
+          <th>Topics</th>
+          <th>Platform</th>
+          <th>Link</th>
+          <th>Level</th>
+          <th>Type</th>
+          <th>Help?</th>
+          <th>Time (min)</th>
+          <th>Approach</th>
+          <th>Mistakes</th>
+          <th>Solution</th>
+          <th>Next revisit</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+      <tfoot>
+        <tr>
+          <td colspan="14" class="add-row-bar">
+            <button class="add-row-btn" id="addRowBtn">+ Add problem</button>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+
+  <footer>
+    <span>Data lives in this browser's localStorage &mdash; export regularly if you use more than one device/browser.</span>
+    <span id="lastSaved"></span>
+  </footer>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
